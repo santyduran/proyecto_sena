@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
+</head>
+<body>
+  <main class="full-page">
+    <div class="form-container">
+      <h2>🌍 Turismo en Colombia</h2>
+      <p>Encuentra hoteles, restaurantes y actividades turísticas en cada ciudad.</p>
+
+      <!-- 🔍 Buscador -->
+      <form>
+        <input type="text" placeholder="Buscar ciudad o destino...">
+        <button type="submit"><i class="fas fa-search"></i> Buscar</button>
+      </form>
+
+      <!-- Hoteles -->
+      <section>
+        <h3><i class="fas fa-hotel"></i> Hoteles</h3>
+        <ul>
+          <li>Hotel Bogotá Plaza</li>
+          <li>Hotel Cartagena Beach</li>
+        </ul>
+      </section>
+
+      <!-- Restaurantes -->
+      <section>
+        <h3><i class="fas fa-utensils"></i> Restaurantes</h3>
+        <ul>
+          <li>Andrés Carne de Res</li>
+          <li>La Cevichería Cartagena</li>
+        </ul>
+      </section>
+
+      <!-- Actividades -->
+      <section>
+        <h3><i class="fas fa-hiking"></i> Actividades</h3>
+        <ul>
+          <li>Tour a la Sierra Nevada</li>
+          <li>Visita a Caño Cristales</li>
+        </ul>
+      </section>
+
+      <!-- Botón de salida -->
+       <div id="logoutDiv" style="display: none;">
+           <button id="cerrar_session" style="margin-top: 15px; background: #c0392b;">Cerrar sesión</button>
+       </div>
+       <div id="loginDiv" style="display: none;">
+           <button id="iniciar_session" style="margin-top: 15px; background: #c0392b;">Iniciar sesión</button>
+       </div>
+    </div>
+  </main>
+</body>
+
+</html>

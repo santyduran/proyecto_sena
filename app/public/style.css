@@ -1,0 +1,145 @@
+html {
+  --s: 200px;
+  --c: #ffffff;
+
+  --_g: #00000015 8%, var(--c) 0 17%, #00000015 0 58%;
+  background:
+    linear-gradient(90deg, var(--_g)) center/var(--s) var(--s),
+    linear-gradient(var(--_g)) center/var(--s) var(--s);
+  background-color: #e9eef6;
+  background-size: var(--s) var(--s);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 16px;
+  color: #333;
+}
+
+.form-container {
+  background-color: #ffffff;
+  width: 400px;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #0d2fc5;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+input:focus {
+  border-color: #0d2fc5;
+  box-shadow: 0 0 5px rgba(13, 47, 197, 0.4);
+}
+
+button {
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #0d2fc5;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0a1e8c;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  margin: 0;
+  height: 18px;
+}
+
+.escondido {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+form+p,
+form p {
+  text-align: center;
+  font-size: 14px;
+}
+
+a {
+  color: #0d2fc5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Estilos exclusivos para la página principal (index.html) --- */
+.full-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh; /* Ocupa toda la altura */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.full-page .form-container {
+  width: 100%;
+  max-width: 1200px; /* Para que no se estire demasiado en pantallas grandes */
+  text-align: left;
+  padding: 30px 40px;
+}
+.full-page section {
+  margin-top: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.full-page h2, 
+.full-page h3 {
+  color: #0d2fc5;
+  margin-bottom: 10px;
+}
