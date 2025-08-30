@@ -12,6 +12,8 @@ document.getElementById('register-form').addEventListener("submit",async(e)=>{
             user:e.target.children.user.value,
             password:e.target.children.password.value,
             email:e.target.children.email.value,
+            birthday:e.target.children.birthday.value,
+            phone:e.target.children.phone.value,
         })
     });
     if (!res.ok) return mensajeError.classList.toggle("escondido",false);
