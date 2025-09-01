@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservar - <%= actividad.nombre %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="full-page">
+    <div class="form-container">
+
+      <!-- 📌 Información de la actividad -->
+      <div class="actividad-info">
+        <h2><%= actividad.nombre %></h2>
+        <p><strong>Categoría:</strong> <%= actividad.categoria %></p>
+        <p><strong>Lugar:</strong> <%= actividad.lugar %></p>
+        <p><strong>Duración:</strong> <%= actividad.duracion %> horas</p>
+        <p><strong>Descripción:</strong> <%= actividad.descripcion %></p>
+      </div>
+
+      <!-- 📌 Formulario de reserva -->
+      <div class="form-reserva">
+        <h3>Hacer una reserva</h3>
+        <form action="/reservar/actividad/<%= actividad.id %>" method="post">
+
+          <input type="hidden" name="actividad_id" value="<%= actividad.id %>">
+          <input type="hidden" name="usuario_id" value="<%= usuario ? usuario.id : '' %>">
+
+          <label>Nombre completo</label>
+          <input type="text" name="nombre" value="<%= usuario ? usuario.nombre_completo : '' %>" required>
+
+          <label>Email</label>
+          <input type="email" name="email" value="<%= usuario ? usuario.email : '' %>" required>
+
+          <label>Teléfono</label>
+          <input type="text" name="telefono" value="<%= usuario ? usuario.telefono : '' %>">
+
+          <label>Fecha de la reserva</label>
+          <input type="date" name="fecha_reserva" required>
+
+          <label>Hora de la reserva</label>
+          <input type="time" name="hora_reserva" required>
+
+          <button type="submit" class="btn-reservar">Confirmar reserva</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

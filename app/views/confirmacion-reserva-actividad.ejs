@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmación de Reserva - <%= actividad.nombre %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="full-page">
+    <div class="form-container">
+
+      <!-- 📌 Información de la actividad -->
+      <div class="actividad-info">
+        <h2>✅ Reserva confirmada para <%= actividad.nombre %></h2>
+        <p><strong>Categoría:</strong> <%= actividad.categoria %></p>
+        <p><strong>Lugar:</strong> <%= actividad.lugar %></p>
+        <p><strong>Duración:</strong> <%= actividad.duracion %> horas</p>
+      </div>
+
+      <!-- 📌 Información de la reserva -->
+      <div class="reserva-info">
+        <h3>Detalles de tu reserva</h3>
+        <p><strong>Cliente:</strong> <%= usuario ? usuario.nombre_completo : reserva.nombre %></p>
+        <p><strong>Email:</strong> <%= usuario ? usuario.email : reserva.email %></p>
+        <p><strong>Teléfono:</strong> <%= usuario ? usuario.telefono : reserva.telefono %></p>
+        <p><strong>Fecha de la reserva:</strong> <%= reserva.fecha_reserva %></p>
+        <p><strong>Hora de la reserva:</strong> <%= reserva.hora_reserva %></p>
+        <p><strong>Estado:</strong> <%= reserva.estado %></p>
+        <p><strong>Código de confirmación:</strong> <%= reserva.codigo_confirmacion %></p>
+      </div>
+
+      <a href="/" class="btn-reservar">🎯 Ver más actividades</a>
+    </div>
+  </main>
+</body>
+</html>

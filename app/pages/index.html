@@ -8,23 +8,48 @@
     <script src="index.js" defer></script>
 </head>
 <body>
+<!-- 
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      events: [
+        { title: 'Reserva Hotel Plaza', start: '2025-09-05' },
+        { title: 'Reserva Restaurante El Sabor', start: '2025-09-08' },
+        { title: 'Tour Histórico', start: '2025-09-10', end: '2025-09-12' }
+      ]
+    });
+    calendar.render();
+  });
+</script> -->
+
+
+
+
   <main class="full-page">
     <div class="form-container">
+      <!-- <div id="calendar"></div> -->
+       <input type="text" id="datepicker">
       <h2>🌍 Turismo en Colombia</h2>
       <p>Encuentra hoteles, restaurantes y actividades turísticas en cada ciudad.</p>
 
       <!-- 🔍 Buscador -->
-      <form>
-        <input type="text" placeholder="Buscar ciudad o destino...">
-        <button type="submit"><i class="fas fa-search"></i> Buscar</button>
+      <form id="formBuscar" class="buscador">
+        <input type="text" id="inputCiudad" placeholder="Buscar ciudad o destino...">
+       <button type="submit"><i class="fas fa-search"></i> Buscar</button>
       </form>
 
       <!-- Hoteles -->
       <section>
         <h3><i class="fas fa-hotel"></i> Hoteles</h3>
         <ul>
-          <li>Hotel Bogotá Plaza</li>
-          <li>Hotel Cartagena Beach</li>
+          id="listaHoteles"
         </ul>
       </section>
 
@@ -32,8 +57,7 @@
       <section>
         <h3><i class="fas fa-utensils"></i> Restaurantes</h3>
         <ul>
-          <li>Andrés Carne de Res</li>
-          <li>La Cevichería Cartagena</li>
+          id="listaRestaurantes"
         </ul>
       </section>
 
@@ -41,8 +65,7 @@
       <section>
         <h3><i class="fas fa-hiking"></i> Actividades</h3>
         <ul>
-          <li>Tour a la Sierra Nevada</li>
-          <li>Visita a Caño Cristales</li>
+          id="listaActividades"
         </ul>
       </section>
 

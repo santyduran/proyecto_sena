@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmación de Reserva - <%= hotel.nombre %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="full-page">
+    <div class="form-container">
+
+      <!-- 📌 Información del hotel -->
+      <div class="hotel-info">
+        <h2>✅ Reserva confirmada en <%= hotel.nombre %></h2>
+        <p>⭐ <%= hotel.estrellas %> estrellas</p>
+        <p><strong>Dirección:</strong> <%= hotel.direccion %></p>
+        <p><strong>Teléfono:</strong> <%= hotel.telefono %></p>
+        <p><strong>Email:</strong> <%= hotel.email %></p>
+      </div>
+
+      <!-- 📌 Información de la reserva -->
+      <div class="reserva-info">
+        <h3>Detalles de tu reserva</h3>
+        <p><strong>Cliente:</strong> <%= usuario.nombre_completo %></p>
+        <p><strong>Email:</strong> <%= usuario.email %></p>
+        <p><strong>Teléfono:</strong> <%= usuario.telefono %></p>
+        <p><strong>Fecha de entrada:</strong> <%= reserva.fecha_entrada %></p>
+        <p><strong>Fecha de salida:</strong> <%= reserva.fecha_salida %></p>
+        <p><strong>Código de confirmación:</strong> <%= reserva.codigo_confirmacion %></p>
+      </div>
+
+      <a href="/" class="btn-reservar">🏠 Volver al inicio</a>
+    </div>
+  </main>
+</body>
+</html>
+

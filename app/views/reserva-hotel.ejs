@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservar - <%= hotel.nombre %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="full-page">
+    <div class="form-container">
+  
+    <div class="hotel-info">
+      <h2><%= hotel.nombre %></h2>
+      <p>⭐ <%= hotel.estrellas %></p>
+      <p><strong>Dirección:</strong> <%= hotel.direccion %></p>
+      <p><strong>Teléfono:</strong> <%= hotel.telefono %></p>
+      <p><strong>Email:</strong> <%= hotel.email %></p>
+      <p><strong>Sitio web:</strong> <a href="<%= hotel.sitio_web %>" target="_blank"><%= hotel.sitio_web %></a></p>
+      <p><strong>Descripción:</strong> <%= hotel.descripcion %></p>
+    </div>
+
+    <!-- 📌 Formulario de reserva -->
+    <div class="form-reserva">
+      <h3>Hacer una reserva</h3>
+      <form action="/reservar/hotel/<%= hotel.id %>" method="post">
+
+        <input type="hidden" name="hotel_id" value="<%= hotel.id %>">
+        <input type="hidden" name="usuario_id" value="<%= usuario.id %>">
+
+        <label>Nombre completo</label>
+        <input type="text" name="nombre" value="<%= usuario ? usuario.nombre_completo : '' %>" required>
+
+        <label>Email</label>
+        <input type="email" name="email" value="<%= usuario ? usuario.email : '' %>" required>
+
+        <label>Teléfono</label>
+        <input type="text" name="telefono" value="<%= usuario ? usuario.telefono : '' %>">
+
+        <label>Numero personas</label>
+        <input type="number" name="numero_personas" >
+
+        <label>Fecha de entrada</label>
+        <input type="date" name="fecha_entrada" required>
+
+        <label>Fecha de salida</label>
+        <input type="date" name="fecha_salida" required>
+
+        <button type="submit" class="btn-reservar">Confirmar reserva</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reservar - <%= restaurante.nombre %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="full-page">
+    <div class="form-container">
+
+      
+      <div class="restaurante-info">
+        <h2><%= restaurante.nombre %></h2>
+        <p>⭐ <%= restaurante.estrellas %></p>
+        <p><strong>Dirección:</strong> <%= restaurante.direccion %></p>
+        <p><strong>Teléfono:</strong> <%= restaurante.telefono %></p>
+        <p><strong>Email:</strong> <%= restaurante.email %></p>
+        <p><strong>Sitio web:</strong> <a href="<%= restaurante.sitio_web %>" target="_blank"><%= restaurante.sitio_web %></a> </p>
+        <p><strong>Descripción:</strong> <%= restaurante.descripcion %></p>
+      </div>
+
+     
+      <div class="form-reserva">
+        <h3>Hacer una reserva</h3>
+        <form action="/reservar/restaurante/<%= restaurante.id %>" method="post">
+
+          <input type="hidden" name="restaurante_id" value="<%= restaurante.id %>">
+          <input type="hidden" name="usuario_id" value="<%= usuario ? usuario.id : '' %>">
+
+          <label>Nombre completo</label>
+          <input type="text" name="nombre" value="<%= usuario ? usuario.nombre_completo : '' %>" required>
+
+          <label>Email</label>
+          <input type="email" name="email" value="<%= usuario ? usuario.email : '' %>" required>
+
+          <label>Teléfono</label>
+          <input type="text" name="telefono" value="<%= usuario ? usuario.telefono : '' %>">
+
+          <label>Número de personas</label>
+          <input type="number" name="num_personas" min="1" required>
+
+          <label>Fecha de la reserva</label>
+          <input type="date" name="fecha_reserva" required>
+
+          <label>Hora de la reserva</label>
+          <input type="time" name="hora_reserva" required>
+
+          <button type="submit" class="btn-reservar">Confirmar reserva</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html> 
