@@ -143,3 +143,87 @@ a:hover {
   color: #0d2fc5;
   margin-bottom: 10px;
 }
+#listaHoteles {
+  list-style: none;
+  padding: 0;
+}
+
+.hotel-item {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}
+
+
+.hotel-info {
+  flex: 2; 
+}
+.hotel-img {
+  flex: 1;
+  text-align: right;
+}
+
+.hotel-img img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+#listaRestaurantes {
+  list-style: none;
+  padding: 0;
+}
+
+.restaurante-item {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}
+
+
+.restaurante-info {
+  flex: 2; 
+}
+.restaurante-img {
+  flex: 1;
+  text-align: right;
+}
+
+.restaurante-img img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+#listaActividades {
+  list-style: none;
+  padding: 0;
+}
+
+.actividad-item {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+}
+
+
+.actividad-info {
+  flex: 2; 
+}
+.actividad-img {
+  flex: 1;
+  text-align: right;
+}
+
+.actividad-img img {
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+}

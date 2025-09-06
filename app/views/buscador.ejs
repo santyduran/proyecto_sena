@@ -16,7 +16,7 @@
         <input type="text" id="inputCiudad" name="filter" placeholder="Buscar ciudad o destino...">
        <button type="submit"><i class="fas fa-search"></i> Buscar</button>
       </form>
-      <h2>🌍 Turismo en Colombia</h2>
+      <h2>🌍 Tourims Around Colombia</h2>
       <p>Encuentra hoteles, restaurantes y actividades turísticas en esta ciudad.</p>
 
       <!-- Hoteles -->
@@ -29,9 +29,11 @@
                 <strong><%= hotel.nombre %></strong> - ⭐ <%= hotel.estrellas %><br>
                 Dirección: <%= hotel.direccion %><br>
                 Tel: <%= hotel.telefono %><br>
-                <!-- <img src="<%= hotel.image %>" alt="Imagen de <%= hotel.nombre %>" style="width:200px; height:auto;"><br> -->
-                <!-- Botón reservar -->
                 <a href="/reservar/hotel/<%= hotel.id %>" class="btn-reservar">Reservar</a>
+            </li>
+                <div class="hotel-img">
+                    <img src="<%= hotel.imagen %>" alt="Imagen de <%= hotel.nombre %>">
+                </div>
             </li>
             <% }) %>
         </ul>
@@ -49,6 +51,10 @@
                 <!-- Botón reservar -->
                 <a href="/reservar/restaurante/<%= restaurante.id %>" class="btn-reservar">Reservar</a>
             </li>
+             <div class="hotel-img">
+                    <img src="<%= restaurante.imagen %>" alt="Imagen de <%= restaurante.nombre %>">
+                </div>
+            </li>
             <% }) %>
         </ul>
         </section>
@@ -64,6 +70,10 @@
                 Horario: <%= act.horario %> | Precio: $<%= act.precio %><br>
                 <!-- Botón reservar -->
                 <a href="/reservar/actividad/<%= act.id %>" class="btn-reservar">Reservar</a>
+            </li>
+             <div class="actividad-img">
+                    <img src="<%= act.imagen %>" alt="Imagen de <%= act.nombre %>">
+                </div>
             </li>
             <% }) %>
         </ul>

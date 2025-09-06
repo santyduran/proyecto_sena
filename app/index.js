@@ -11,6 +11,8 @@ import {iniciar_reserva_restaurante,guardar_reserva_restaurante,confirmar_Reserv
 //rutas de la api
 import dotenv from 'dotenv';
 import { confirmar_reserva_actividad, guardar_reserva_actividad, iniciar_reserva_actividad } from './controllers/reservaactividad.controller.js';
+import {pool} from './database/conexionMysql.js';
+
 
 dotenv.config();
 const app = express();
@@ -61,3 +63,52 @@ app.post('/api/register',authentication.register);
 //buscador o index
  app.post('/api/busqueda',buscador);
 
+ //endopoint
+ app.post('/api/hotel',crear)
+
+ async function crear(req,res){
+   
+    const { nombre, direccion, ciudad_id, estrellas, telefono, email, imagen, descripcion, sitio_web } = req.body;
+    
+    const[resultado] = await pool.query( `INSERT INTO hoteles (nombre, direccion, ciudad_id, estrellas, telefono, email, imagen, descripcion, sitio_web)
+       VALUES (?, ?, ?, ?, ?, ?, ?,?,?)`,
+      [nombre, direccion, ciudad_id, estrellas, telefono, email, imagen, descripcion, sitio_web]
+    );
+    res.json({
+        message:"hotel creado con exito",
+        id: resultado.id
+    });
+
+ };
+app.post('/api/restaurante',crear1)
+
+ async function crear1(req,res){
+   
+    const { nombre, direccion, ciudad_id, telefono, email, imagen, descripcion, sitio_web } = req.body;
+    
+    const[resultado] = await pool.query( `INSERT INTO hoteles (nombre, direccion, ciudad_id, telefono, email, imagen, descripcion, sitio_web)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+      [nombre, direccion, ciudad_id, telefono, email, imagen, descripcion, sitio_web]
+    );
+    res.json({
+        message:"restaurante creado con exito",
+        id: resultado.id
+    });
+ };
+
+ 
+app.post('/api/actividades',crear2)
+
+ async function crear2(req,res){
+   
+    const { nombre, direccion, ciudad_id, imagen,  descripcion, sitio_web } = req.body;
+    
+    const[resultado] = await pool.query( `INSERT INTO hoteles (nombre, direccion, ciudad_id, imagen, descripcion, sitio_web)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [nombre, direccion, ciudad_id, imagen, descripcion, sitio_web]
+    );
+    res.json({
+        message:"actividad creada con exito",
+        id: resultado.id
+    });
+ };
