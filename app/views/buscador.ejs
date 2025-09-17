@@ -26,15 +26,22 @@
         <ul id="listaHoteles">
             <% hoteles.forEach(hotel => { %>
             <li>
-                <strong><%= hotel.nombre %></strong> - ⭐ <%= hotel.estrellas %><br>
-                Dirección: <%= hotel.direccion %><br>
-                Tel: <%= hotel.telefono %><br>
-                <a href="/reservar/hotel/<%= hotel.id %>" class="btn-reservar">Reservar</a>
-            </li>
-                <div class="hotel-img">
-                    <img src="<%= hotel.imagen %>" alt="Imagen de <%= hotel.nombre %>">
+                <div class="hotel-item">
+                    <div class="hotel-info">
+                        <strong><%= hotel.nombre %></strong> - ⭐ <%= hotel.estrellas %><br>
+                        Descripción: <%= hotel.descripcion %><br>
+                            Dirección: <%= hotel.direccion %><br>
+                        Tel: <%= hotel.telefono %><br>
+                    <a href="/reservar/hotel/<%= hotel.id %>" class="btn-reservar">Reservar</a>
+                    </div>
+                    <div class="hotel-img">
+                        <img src="<%= hotel.imagen %>" alt="Imagen de <%= hotel.nombre %>">
+                    </div>
                 </div>
+                
             </li>
+                
+            
             <% }) %>
         </ul>
         </section>
@@ -45,16 +52,24 @@
         <ul id="listaRestaurantes">
             <% restaurantes.forEach(restaurante => { %>
             <li>
-                <strong><%= restaurante.nombre %></strong> - 🍴 <%= restaurante.tipo_cocina %><br>
-                Dirección: <%= restaurante.direccion %><br>
-                Horario: <%= restaurante.horario_atencion %><br>
+                <div class="restaurante-item">
+                    <div class="restaurante-info">
+                        <strong><%= restaurante.nombre %></strong> - 🍴 <%= restaurante.tipo_cocina %><br>
+                         Descripción: <%= restaurante.descripcion %><br>
+                        Dirección: <%= restaurante.direccion %><br>
+                            Horario: <%= restaurante.horario_atencion %><br>
                 <!-- Botón reservar -->
-                <a href="/reservar/restaurante/<%= restaurante.id %>" class="btn-reservar">Reservar</a>
-            </li>
-             <div class="hotel-img">
-                    <img src="<%= restaurante.imagen %>" alt="Imagen de <%= restaurante.nombre %>">
+                        <a href="/reservar/restaurante/<%= restaurante.id %>" class="btn-reservar">Reservar</a>
+                        
+                    </div>
+                     <div class="restaurante-img">
+                        <img src="<%= restaurante.imagen %>" alt="Imagen de <%= restaurante.nombre %>">
+                     </div>
                 </div>
+                
             </li>
+             
+           
             <% }) %>
         </ul>
         </section>
@@ -65,16 +80,24 @@
         <ul id="listaActividades">
             <% actividades.forEach(act => { %>
             <li>
-                <strong><%= act.nombre %></strong> - <%= act.tipo_actividad %><br>
-                Dirección: <%= act.direccion %><br>
-                Horario: <%= act.horario %> | Precio: $<%= act.precio %><br>
-                <!-- Botón reservar -->
-                <a href="/reservar/actividad/<%= act.id %>" class="btn-reservar">Reservar</a>
-            </li>
-             <div class="actividad-img">
-                    <img src="<%= act.imagen %>" alt="Imagen de <%= act.nombre %>">
+                <div class="actividad-item">
+                    <div class="actividad-info">
+                        <strong><%= act.nombre %></strong> - <%= act.tipo_actividad %><br>
+                         Descripción: <%= actividades.descripcion %><br>
+                        Dirección: <%= act.direccion %><br>
+                            Horario: <%= act.horario %> | Precio: $<%= act.precio %><br>
+                            <!-- Botón reservar -->
+                            <a href="/reservar/actividad/<%= act.id %>" class="btn-reservar">Reservar</a>
+                    </div>
+                    
+                            <div class="actividad-img">
+                                <img src="<%= act.imagen %>" alt="Imagen de <%= act.nombre %>">
+                            </div>
                 </div>
+                
             </li>
+             
+            
             <% }) %>
         </ul>
         </section>

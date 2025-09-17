@@ -12,6 +12,7 @@ export async function iniciar_reserva_actividad(req, res) {
   }
 
   const actividad = actividades[0];
+  console.log(actividad);
   const usuario = req.user || null;
 
   res.render("reserva-actividad", { actividad, usuario });
